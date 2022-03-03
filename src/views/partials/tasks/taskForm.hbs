@@ -1,0 +1,19 @@
+<form action="/tasks/add" method="POST">
+    <!--El formulario permite guardar datos
+    action, ke digo a donde van los datos,
+    method, dice que metodo se usa.Post manda datos  -->
+
+    <div>
+        <label for="title">Write a titlle</label> <!--El for es para dercle que valla a ese input-->
+        <input type="text" name="title" placeholder="Title" id="title">
+        <!--type: aqui digo que hay un texto.
+        place. es una indicacion
+        name dice atraves de que nombre mando el dato.
+        -->
+    </div>
+    <div>
+        <label for="title">Write a titlle</label>
+        <textarea name="description" placeholder="Description" id="description"> </textarea>
+    </div>
+    <button>Add</button>
+</form>
