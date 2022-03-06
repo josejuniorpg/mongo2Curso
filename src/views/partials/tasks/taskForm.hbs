@@ -1,19 +1,25 @@
-<form action="/tasks/add" method="POST">
-    <!--El formulario permite guardar datos
-    action, ke digo a donde van los datos,
-    method, dice que metodo se usa.Post manda datos  -->
+<div class="card card-body p-4 rounded-0 bg-dark text-white">
+    <h3>Añada una tarea</h3>
+    <form action="/tasks/add" method="POST">
+        <!--El formulario permite guardar datos
+        action, ke digo a donde van los datos,
+        method, dice que metodo se usa.Post manda datos  -->
 
-    <div>
-        <label for="title">Write a titlle</label> <!--El for es para dercle que valla a ese input-->
-        <input type="text" name="title" placeholder="Title" id="title">
-        <!--type: aqui digo que hay un texto.
-        place. es una indicacion
-        name dice atraves de que nombre mando el dato.
-        -->
-    </div>
-    <div>
-        <label for="title">Write a titlle</label>
-        <textarea name="description" placeholder="Description" id="description"> </textarea>
-    </div>
-    <button>Add</button>
-</form>
+        <div>
+            <label for="title">Write a titlle</label> <!--El for es para dercle que valla a ese input-->
+            <input type="text" name="title" placeholder="Title" id="title"
+                   class="form-control rounded-0 bg-dark text-white">
+            <!--type: aqui digo que hay un texto.
+            place. es una indicacion
+            name dice atraves de que nombre mando el dato.
+            -->
+        </div>
+        <div>
+            <label for="title">Write a titlle</label>
+            <textarea name="description" placeholder="Description" id="description"
+                      class="form-control rounded-0 bg-dark text-white">
+            </textarea>
+        </div>
+        <button class="btn btn-primary btn-sm mt-2">Add</button>
+    </form>
+</div>

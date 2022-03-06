@@ -1,2 +1,6 @@
+#Estos son comentarios
+
 .env
 node_modules
+
+.dist

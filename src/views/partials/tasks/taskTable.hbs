@@ -1,39 +1,49 @@
 
 <!--<ul> // a la etiqueta pre le digo que me muestre la variable llamada tareas-->
-    {{#each tasks}} <!--//Inserto el nombre de la variable que quiero recorrer-->
-        <!-- <li>{this}//Muestra todos los datos</li> //Le digo que por cada recorrido muestra lo de las doble llaves-->
-        <li>{{title}}</li> <!--//Le digo que por cada recorrido muestra lo de las doble llaves-->
+{{#each tasks}} <!--//Inserto el nombre de la variable que quiero recorrer-->
+<!-- <li>{this}//Muestra todos los datos</li> //Le digo que por cada recorrido muestra lo de las doble llaves-->
+<li>{{title}}</li> <!--//Le digo que por cada recorrido muestra lo de las doble llaves-->
         <!--<h1>{{description}}</h1>
     {{/each}}
-</ul>//Es un for para recorrer listas.-->
+</ul> //Es un for para recorrer listas.-->
 
-
-<table>
-    <thead>
-    <tr>
-        <th>N.</th>
-        <th>Titlle</th>
-        <th>Description</th>
-        <th>Operations</th>
-    </tr>
-    </thead>
-    <bod>
+{{#if tasks}}
+    <table class="table table-bordered table-hover table-dark">
+        <thead>
+        <tr>
+            <th>N.</th>
+            <th>Titlle</th>
+            <th>Description</th>
+            <th>Operations</th>
+        </tr>
+        </thead>
+        <tbody>
         {{#each tasks}}
-            <td>{{@index}}</td> <!--Coloco un numero cada vez que se recorre-->
-            <tr> <!--Esto parece ser la tablas-->
+            <tr>
+                <!--Esto parece ser la tablas-->
+                <td>{{@index}}</td> <!--Coloco un numero cada vez que se recorre-->
                 <td>{{title}}</td>
                 <td>{{description}}</td>
                 <td>
-                   {{#if done}}
-                       <a href="/toggleDone/{{_id}}">Undone</a> <!--//Toogle signfica que se puede intercambi la propiedad-->
+                    {{#if done}}
+                        <a href="/toggleDone/{{_id}}" class="btn btn-dark">Undone</a> <!--//Toogle signfica que se puede intercambi la propiedad-->
                     {{else}}
-                       <a href="/toggleDone/{{_id}}">Done</a>
-                   {{/if }}
-                       <a href="/delete/{{_id}}">Delete</a>
+                        <a href="/toggleDone/{{_id}}" class="btn btn-success">Done</a>
+                    {{/if }}
+                    <a href="/delete/{{_id}}" class="btn btn-danger">Delete</a>
                     <!--<button>Delete</button>-->
-                    <a href="/edit/{{_id}}">Update</a>
+                    <a href="/edit/{{_id}}" class="btn btn-info">Update</a>
                 </td>
             </tr>
-            {{/each}}
-    </bod>
-</table>
+            <!--El eaach tambien tien un else. para cuando no haya elementos-->
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="text-center text-white">
+            <h1>No task</h1>
+            <img src="./src/public/icons/empty.svg" class="w-65">
+        </div>
+    </div>
+{{/if}}

@@ -55,9 +55,11 @@ app.engine(
     defaultLayout: "main",
     extname: ".hbs",  //Aqui digo el modulo. para que sepa que termina en hbs
 }));*/
-
 //Routes
 app.use(indexRoutes);
+//static files  //Son los que puede acceder el buscador
+app.use(express.static(path.join(__dirname, "public"))) //Estoy uniendo 2 directorios
+//Con esto express sabe que la carpeta public se puede leer
 export default app; //Exporto por defercto el objeto app
 
 
