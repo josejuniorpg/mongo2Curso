@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card card-body bg-dark p-4 text-white rounded-0">
+                <form action="/edit/{{task._id}}" method="POST"> <!--Lo escribo hacia donde quiero que lo envie. Lo envio a la ruta edit pero con el metodo post-->
+                    <!--Concateno ese id. Porque es lo que mongo debe de recibir, al ser su id especial-->
+                    <h1>Actualizar datos</h1>
+                    <input type="text" name="title" placeholder="Title" value="{{task.title}}"
+                           class="form-control rounded-0 bg-dark text-white">
+                    <!--El value se coloca diferente en text area. De la tarea que recibo muentrp el totilo -->
+                    <textarea name="description" rows="3" placeholder="Add a Description"
+                              class="form-control rounded-0 bg-dark text-white">
+                        {{task.description}}</textarea>
+                    </textarea>
+                    <button class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
